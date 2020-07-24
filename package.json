@@ -4,7 +4,7 @@
   "description": "Ejemplo de como usar la API de Rick And Morty",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app"
   },
   "repository": {
     "type": "git",
