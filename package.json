@@ -1,0 +1,30 @@
+{
+  "name": "rick-and-morty-api",
+  "version": "1.0.0",
+  "description": "Ejemplo de como usar la API de Rick And Morty",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FedericoLeiva12/Rick-And-Morty-API.git"
+  },
+  "keywords": [
+    "rick",
+    "morty",
+    "api",
+    "express",
+    "javascript",
+    "ajax"
+  ],
+  "author": "Federico J. Leiva",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/FedericoLeiva12/Rick-And-Morty-API/issues"
+  },
+  "homepage": "https://github.com/FedericoLeiva12/Rick-And-Morty-API#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
