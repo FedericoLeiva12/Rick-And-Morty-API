@@ -5,20 +5,52 @@ const API = {
 };
 
 const charactersPerPage = 6;
-let page = 0;
+
+let queryData = '';
+let page = 1;
+
+let next = null;
+let back = null;
+
+$('#next').hide();
+$('#back').hide();
 
 $('#search-button').on('click', () => {
-    let queryData = $('#search-bar').val();
+    queryData = $('#search-bar').val();
     $('#search-bar').val('');
 
+    page = 1;
+
+    api_request(API.characters, {
+        page: page,
+        name: queryData
+    });
+});
+
+$('#next').on('click', () => {
+    api_request(API.characters, {
+        page: ++page,
+        name: queryData
+    });
+});
+
+$('#back').on('click', () => {
+    api_request(API.characters, {
+        page: --page,
+        name: queryData
+    });
+});
+
+function api_request(url, data = {}) {
     $.get({
         url: API.characters,
-        data: {
-            name: queryData,
-            page: 0
-        },
+        data: data,
         success: (res) => {
             $('.result').html('');
+            console.log(res);
+
+            next = res.info.next || null;
+            back = res.info.prev || null;
 
             for(let [key, value] of Object.entries(res.results)) {
                 let elem = $('<div>');
@@ -32,6 +64,13 @@ $('#search-button').on('click', () => {
                 elem.append(name);
                 $('.result').append(elem);
             }
+
+            if(next !== null) $('#next').show();
+            else $('#next').hide();
+            if(back !== null) $('#back').show();
+            else $('#back').hide();
+            
+            $('html').scrollTop(0);
         }
     })
-})
+}

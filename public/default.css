@@ -78,3 +78,27 @@ body {
         width: auto;
     }
 }
+
+.pagination {
+    width: flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination button {
+    width: 5em;
+    height: 3em;
+    margin: 0.5em;
+    border: 1px solid #888;
+    background-color: #aaa;
+    color:#fff;
+    text-shadow: 1px 1px 0 #777,
+                 0px 1px 0 #777,
+                 1px 0px 0 #777,
+                 -1px 0px 0 #777,
+                 -1px 1px 0 #777,
+                 1px -1px 0 #777,
+                 0px -1px 0 #777,
+                 0px -1px 0 #777;
+}
