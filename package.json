@@ -25,6 +25,6 @@
   },
   "homepage": "https://github.com/FedericoLeiva12/Rick-And-Morty-API#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.3"
   }
 }
